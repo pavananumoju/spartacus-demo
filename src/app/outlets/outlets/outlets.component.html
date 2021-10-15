@@ -1,0 +1,21 @@
+<ng-template cxOutletRef="SiteLogo">
+    <img src="assets/img/logo.jpg" width="50px">
+</ng-template>
+
+<ng-template [cxOutletRef]="outlets.PRICE">
+    Type safe outlet name for price</ng-template>
+
+
+    <ng-template cxOutletRef="footer" OutletPosition="before">
+      <div class="bg-light text-dark text-center mt-5">
+         <div class="container py-5">
+              I'm added before footer.
+         </div>
+      </div>
+  </ng-template>
+  
+  <!-- slot position based output -->
+  <ng-template cxOutletRef="Section1" OutletPosition="OutletPosition.BEFORE" let-model>
+    "Section1" position
+    <pre>{{ model.components$ | async | json }}</pre>
+  </ng-template>
